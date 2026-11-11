@@ -1,4 +1,6 @@
 RT-DETR/
 weights/
+runs/
+
 *.pt
 *.MP4

@@ -19,8 +19,30 @@ para calcular el índice de las clases a detectar en el dataset Coco.
 
 
 ### Detectar matrículas
-> Por hacer
+Para la detección de matrículas se ha usado un dataset de un curso anterior,
+pero etiquetando de nuevo cada imagen.
+El dataset etiquetado y dividido puede encontrarse 
+[aquí](https://drive.google.com/drive/folders/1puQBX3HBJref2brm8q5jQ1OaYJQgEGHX?usp=sharing).
 
+Por limitaciones técnicas, el modelo se ha entrenado en *collab notebooks*.
+A continuación, se adjunta el código usado para el entrenamiento.
+
+```py
+import torch
+from ultralytics import YOLO
+
+model = YOLO("yolo11n.pt")
+
+model.train(
+    data="/content/drive/MyDrive/UNI/26-27/vc/license_plates/dataset/data.yaml",
+    device=0,
+    imgsz=416, batch=4,
+    epochs=40
+)
+```
+
+Los resultados del entrenamiento se adjuntan en la carpeta `weights`.
+Para la detección de las matrículas se usará el modelo `best.pt`.
 
 ### Contar total de cada clase
 El total de cada clase se cuenta en el bucle principal y se almacena en un diccionario
@@ -45,7 +67,12 @@ Se puede ver el vídeo de los resultados en el siguiente enlace:
 [vídeo pendiente]().
 
 ### CSV de los resultados del seguimiento
-> Por hacer
+Para la creación del CSV,
+para cada objeto detectado en cada frame del vídeo analizado
+se escribe un campo del archivo.
+
+Se ha separado la creación del campo a escribir
+en la función `build_rows()` para facilitar la legibilidad del bucle principal. 
 
 ## Entrega B
 > Por hacer

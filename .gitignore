@@ -1,6 +1,5 @@
 RT-DETR/
-weights/
 runs/
 
-*.pt
+yolo*.pt
 *.MP4

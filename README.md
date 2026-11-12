@@ -80,5 +80,40 @@ se escribe un campo del archivo.
 Se ha separado la creación del campo a escribir
 en la función `build_rows()` para facilitar la legibilidad del bucle principal. 
 
+
 ## Entrega B
+
+
+### Leer matrículas
+Esta tarea se ha implementado de forma incremental en el código de la entrega anterior.
+
+El OCR elegido es `easyocr`.
+
+Las matrículas se leen en el bucle principal, justo después de su detección.
+Para esto, se usan las siguientes funciones auxiliares:
+
+- `read_plate()`: se encarga de leer la matrícula.
+Primero, extrae la *bounding box* de la matrícula
+y luego la escala para aumentar su tamaño, de modo que la detección sea más precisa.
+Finalmente, lee la matrícula y calcula la puntuación obtenida (media de la confianza por carácter leído).
+Antes de retornar, llama a la función `fix_plate()` para corregir posibles errores con caracteres que no existan en matrículas en España.
+
+- `fix_plate()`: corrige caracteres que no puedan existir en matrículas españolas.
+
+La lectura de la matrícula se valida con la siguiente expresión regular:
+
+```regex
+^\d{4}[BCDFGHJKLMNPRSTVWXYZ]{3}$
+```
+
+Si la matrícula es válida,
+esta solo se guarda en caso de no existir otra matrícula para el coche detectado
+o siesta tiene una mayor puntuación que la ya almacenada.
+
+Finalmente, el OCR se ejecutará únicamente cuando se detecte una matrícula nueva
+o cuando pasen la cantidad de frames indicados en `OCR_EVERY`.
+De este modo, se reduce la carga de trabajo y el tiempo de ejecución. 
+
+
+### Comparación OCR vs VLM
 > Por hacer

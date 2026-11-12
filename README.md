@@ -44,6 +44,12 @@ model.train(
 Los resultados del entrenamiento se adjuntan en la carpeta `weights`.
 Para la detección de las matrículas se usará el modelo `best.pt`.
 
+La detección de matrículas también se ha separado en una función auxiliar: `detect_plates()`.
+Esta actúa de forma similar 
+a la detección de objetos del grupo principal,
+pero únicamente al detectarse un coche y únicamente en el área que ocupa dicho coche.
+
+
 ### Contar total de cada clase
 El total de cada clase se cuenta en el bucle principal y se almacena en un diccionario
 en el que la clave es el nombre de la clase y el valor la cantidad detectada de la misma.

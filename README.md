@@ -113,6 +113,9 @@ Finalmente, el OCR se ejecutará únicamente cuando se detecte una matrícula nu
 o cuando pasen la cantidad de frames indicados en `OCR_EVERY`.
 De este modo, se reduce la carga de trabajo y el tiempo de ejecución. 
 
+Se puede ver el vídeo de los resultados en el siguiente enlace:
+[vídeo](https://drive.google.com/file/d/1c0wF14rWNKlRqdYSZ6w8APSOdYjI4Kzq/view?usp=drive_link).
+
 
 ### Comparación OCR vs VLM
 > Por hacer

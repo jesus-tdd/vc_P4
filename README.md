@@ -70,7 +70,7 @@ con el parámetro `save=True`.
 Tanto el vídeo original como el de los resultados
 son demasiado pesados para su subida a GitHub.
 Se puede ver el vídeo de los resultados en el siguiente enlace:
-[vídeo pendiente]().
+[vídeo](https://drive.google.com/file/d/1c0wF14rWNKlRqdYSZ6w8APSOdYjI4Kzq/view?usp=drive_link).
 
 ### CSV de los resultados del seguimiento
 Para la creación del CSV,
@@ -79,7 +79,6 @@ se escribe un campo del archivo.
 
 Se ha separado la creación del campo a escribir
 en la función `build_rows()` para facilitar la legibilidad del bucle principal. 
-
 
 ## Entrega B
 

@@ -118,4 +118,6 @@ Se puede ver el vídeo de los resultados en el siguiente enlace:
 
 
 ### Comparación OCR vs VLM
-> Por hacer
+Se ha desarrollado el código para las pruebas,
+pero por limitaciones de tiempo no se ha comprobado su correcto funcionamiento y,
+por ende, no se han obtenido resultados.
